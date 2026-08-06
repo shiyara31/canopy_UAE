@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Canopy Architects</title>
+  <meta name="description" content="Get in touch with Canopy Architects to discuss your next luxury architectural or interior design project.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="header scrolled" id="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">CANOPY</a>
+
+      <nav class="desktop-nav">
+        <a href="index.html">HOME</a>
+        <a href="index.html#projects">PROJECTS</a>
+        <a href="services.html">SERVICES</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="contact.html" class="active">CONTACT US</a>
+      </nav>
+
+      <div class="menu-toggle" id="menuToggle" aria-label="Open Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay Menu -->
+  <div class="mobile-menu-overlay" id="mobileMenu">
+    <div class="mobile-menu-close" id="menuClose">&#x2715;</div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="index.html#projects">PROJECTS</a></li>
+      <li><a href="services.html">SERVICES</a></li>
+      <li><a href="about.html">ABOUT US</a></li>
+      <li><a href="contact.html" class="active">CONTACT US</a></li>
+    </ul>
+  </div>
+
+  <main style="padding-top: 140px; background-color: var(--bg-light); color: var(--text-dark-primary); min-height: 80vh;">
+    <section style="padding: 60px 0 100px 0;">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; align-items: start;">
+          <div>
+            <span class="section-tag">INITIATE CONVERSATION</span>
+            <h1 class="section-heading">Let's Discuss Your Vision</h1>
+            <p class="section-desc">
+              We welcome inquiries for luxury architectural design, bespoke interior solutions, and full turnkey execution. Reach out to our design team directly.
+            </p>
+            
+            <div style="display: flex; flex-direction: column; gap: 24px; margin-top: 40px;">
+              <div>
+                <h4 style="font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold); margin-bottom: 6px;">Phone</h4>
+                <p><a href="tel:+919876543210" style="font-weight: 500;">+91 98765 43210</a></p>
+              </div>
+
+              <div>
+                <h4 style="font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold); margin-bottom: 6px;">Email</h4>
+                <p><a href="mailto:hello@canopyarchitects.com" style="font-weight: 500;">hello@canopyarchitects.com</a></p>
+              </div>
+
+              <div>
+                <h4 style="font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold); margin-bottom: 6px;">Studio Location</h4>
+                <p style="font-weight: 500;">Bangalore, India / Dubai, UAE</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="background-color: var(--bg-light-card); padding: 40px; border-radius: var(--radius-card);">
+            <form onsubmit="event.preventDefault(); alert('Thank you! Your inquiry has been sent.');">
+              <div style="margin-bottom: 20px;">
+                <label style="display: block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Your Name</label>
+                <input type="text" placeholder="John Doe" required style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.15); font-family: inherit;">
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <label style="display: block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Email Address</label>
+                <input type="email" placeholder="john@example.com" required style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.15); font-family: inherit;">
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <label style="display: block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Message</label>
+                <textarea rows="5" placeholder="Tell us about your project requirements..." required style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.15); font-family: inherit; resize: vertical;"></index-textarea>
+              </div>
+
+              <button type="submit" class="btn-outline-dark" style="width: 100%; justify-content: center;">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="footer-logo">CANOPY</a>
+          <p class="footer-tagline">Architecture | Interiors | Beyond</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>QUICK LINKS</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>SERVICES</h4>
+          <ul>
+            <li><a href="services.html">Architecture</a></li>
+            <li><a href="services.html">Interior Design</a></li>
+            <li><a href="services.html">Turnkey Execution</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>CONTACT US</h4>
+          <ul class="footer-contact-list">
+            <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+            <li><a href="mailto:hello@canopyarchitects.com">hello@canopyarchitects.com</a></li>
+            <li><span>Bangalore, India</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h4>NEWSLETTER</h4>
+          <p>Stay updated with our latest projects and insights.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault();">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" aria-label="Submit Newsletter">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p>&copy; 2024 Canopy Architects. All Rights Reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

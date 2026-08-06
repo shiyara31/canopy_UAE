@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Canopy Architects</title>
+  <meta name="description" content="Learn about Canopy Architects, our philosophy, design leadership, and passion for crafting meaningful spatial experiences.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="header scrolled" id="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">CANOPY</a>
+
+      <nav class="desktop-nav">
+        <a href="index.html">HOME</a>
+        <a href="index.html#projects">PROJECTS</a>
+        <a href="services.html">SERVICES</a>
+        <a href="about.html" class="active">ABOUT US</a>
+        <a href="contact.html">CONTACT US</a>
+      </nav>
+
+      <div class="menu-toggle" id="menuToggle" aria-label="Open Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay Menu -->
+  <div class="mobile-menu-overlay" id="mobileMenu">
+    <div class="mobile-menu-close" id="menuClose">&#x2715;</div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="index.html#projects">PROJECTS</a></li>
+      <li><a href="services.html">SERVICES</a></li>
+      <li><a href="about.html" class="active">ABOUT US</a></li>
+      <li><a href="contact.html">CONTACT US</a></li>
+    </ul>
+  </div>
+
+  <main style="padding-top: 140px; background-color: var(--bg-light); color: var(--text-dark-primary); min-height: 80vh;">
+    <!-- About Section -->
+    <section class="about-canopy-section">
+      <div class="container">
+        <div class="about-canopy-grid">
+          <div class="about-canopy-left">
+            <span class="section-tag">ABOUT CANOPY</span>
+            <h2 class="section-heading">Designing With Purpose.<br>Building With Passion.</h2>
+            <p class="section-desc">
+              At Canopy, we believe that every space has a story. Our team of architects and designers works closely with you to create spaces that are not only beautiful but also meaningful and enduring.
+            </p>
+            <p class="section-desc">
+              With a commitment to craftsmanship, materials, and spatial harmony, we approach each residential and commercial project as a bespoke work of art.
+            </p>
+            <a href="contact.html" class="btn-outline-dark">
+              <span>GET IN TOUCH</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="about-canopy-right">
+            <div class="about-img-container">
+              <img src="images/about.jpg" alt="Canopy Interior Design Studio">
+              <div class="floating-quote-box">
+                <div class="quote-icon">“</div>
+                <p>We don't just design spaces, we craft experiences.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="footer-logo">CANOPY</a>
+          <p class="footer-tagline">Architecture | Interiors | Beyond</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>QUICK LINKS</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>SERVICES</h4>
+          <ul>
+            <li><a href="services.html">Architecture</a></li>
+            <li><a href="services.html">Interior Design</a></li>
+            <li><a href="services.html">Turnkey Execution</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>CONTACT US</h4>
+          <ul class="footer-contact-list">
+            <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+            <li><a href="mailto:hello@canopyarchitects.com">hello@canopyarchitects.com</a></li>
+            <li><span>Bangalore, India</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h4>NEWSLETTER</h4>
+          <p>Stay updated with our latest projects and insights.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault();">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" aria-label="Submit Newsletter">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p>&copy; 2024 Canopy Architects. All Rights Reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
