@@ -28,50 +28,102 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
   }
 
-  // 4. Featured Projects Carousel Track
-  const track = document.getElementById('projectsTrack');
-  const prevBtn = document.getElementById('prevProject');
-  const nextBtn = document.getElementById('nextProject');
+  // 4. Featured Projects Horizontal Side-by-Side Scroll & Drag
+  const wrapper = document.querySelector('.projects-carousel-wrapper');
   const dotsContainer = document.getElementById('carouselDots');
-  
-  if (track && prevBtn && nextBtn) {
-    const cards = track.querySelectorAll('.project-card');
-    const cardWidth = 340 + 24; // card width + gap
-    let currentIndex = 0;
-    const maxIndex = cards.length - 1;
 
-    const updateCarousel = (index) => {
-      currentIndex = Math.max(0, Math.min(index, maxIndex));
-      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-      
-      // Update active dot
-      if (dotsContainer) {
-        const dots = dotsContainer.querySelectorAll('.dot');
-        dots.forEach((dot, idx) => {
-          if (idx === currentIndex) {
-            dot.classList.add('active');
-          } else {
-            dot.classList.remove('active');
-          }
-        });
-      }
-    };
+  if (wrapper) {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
 
-    prevBtn.addEventListener('click', () => {
-      updateCarousel(currentIndex - 1);
+    // Mouse drag scrolling
+    wrapper.addEventListener('mousedown', (e) => {
+      isDown = true;
+      wrapper.classList.add('active-drag');
+      startX = e.pageX - wrapper.offsetLeft;
+      scrollLeft = wrapper.scrollLeft;
     });
 
-    nextBtn.addEventListener('click', () => {
-      updateCarousel(currentIndex + 1);
+    wrapper.addEventListener('mouseleave', () => {
+      isDown = false;
+      wrapper.classList.remove('active-drag');
     });
 
+    wrapper.addEventListener('mouseup', () => {
+      isDown = false;
+      wrapper.classList.remove('active-drag');
+    });
+
+    wrapper.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - wrapper.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      wrapper.scrollLeft = scrollLeft - walk;
+    });
+
+    // Update active dot on scroll & dot click scrolling
     if (dotsContainer) {
       const dots = dotsContainer.querySelectorAll('.dot');
+      const cardWidth = 364; // 340px card width + 24px gap
+
+      wrapper.addEventListener('scroll', () => {
+        const activeIndex = Math.round(wrapper.scrollLeft / cardWidth);
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === activeIndex);
+        });
+      });
+
       dots.forEach((dot, idx) => {
         dot.addEventListener('click', () => {
-          updateCarousel(idx);
+          wrapper.scrollTo({
+            left: idx * cardWidth,
+            behavior: 'smooth'
+          });
         });
       });
     }
   }
+
+  // 5. Stat Counter Animation
+  const statCounters = document.querySelectorAll('.stat-counter');
+  if (statCounters.length > 0) {
+    let animated = false;
+    const animateCounters = () => {
+      statCounters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const duration = 2000;
+        const stepTime = 30;
+        const steps = duration / stepTime;
+        const increment = target / steps;
+        let current = 0;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            counter.textContent = target;
+            clearInterval(timer);
+          } else {
+            counter.textContent = Math.ceil(current);
+          }
+        }, stepTime);
+      });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !animated) {
+          animated = true;
+          animateCounters();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+      observer.observe(statsSection);
+    }
+  }
 });
+
