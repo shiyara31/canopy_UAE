@@ -28,17 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
   }
 
-  // 3. Scroll to Discover Button
-  const scrollBtn = document.getElementById('scrollBtn');
-  if (scrollBtn) {
-    scrollBtn.addEventListener('click', () => {
-      const target = document.getElementById('services');
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  }
-
   // 4. Featured Projects Carousel Track
   const track = document.getElementById('projectsTrack');
   const prevBtn = document.getElementById('prevProject');

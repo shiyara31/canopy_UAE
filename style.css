@@ -420,61 +420,6 @@ img {
   color: #000000;
 }
 
-/* Bottom Left Scroll Capsule Button */
-.scroll-discover-btn {
-  position: absolute;
-  bottom: 40px;
-  left: 6%;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 10px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: var(--radius-pill);
-  backdrop-filter: blur(6px);
-  background: rgba(12, 13, 14, 0.3);
-  cursor: pointer;
-  transition: all var(--transition-normal);
-}
-
-.scroll-discover-btn:hover {
-  border-color: var(--accent-gold);
-  background: rgba(12, 13, 14, 0.6);
-}
-
-.scroll-mouse-icon {
-  width: 18px;
-  height: 28px;
-  border: 1.5px solid rgba(255, 255, 255, 0.8);
-  border-radius: 12px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  padding-top: 5px;
-}
-
-.scroll-dot {
-  width: 3px;
-  height: 6px;
-  background-color: var(--text-light-primary);
-  border-radius: 2px;
-  animation: scrollAnim 2s infinite ease-in-out;
-}
-
-@keyframes scrollAnim {
-  0% { transform: translateY(0); opacity: 1; }
-  50% { transform: translateY(8px); opacity: 0.3; }
-  100% { transform: translateY(0); opacity: 1; }
-}
-
-.scroll-discover-btn span {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--text-light-primary);
-}
 
 /* ----------------------------------------------------
    SECTION 1: WHAT WE DO (Light Theme)
@@ -983,10 +928,6 @@ img {
     font-size: 3rem;
   }
   
-  .scroll-discover-btn {
-    left: 50%;
-    transform: translateX(-50%);
-  }
   
   .footer-top-grid {
     grid-template-columns: 1fr;
