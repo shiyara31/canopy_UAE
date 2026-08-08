@@ -148,5 +148,142 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // 7. Project Modal Lightbox Gallery
+  const projectModal = document.getElementById('projectModal');
+  const modalBackdrop = document.getElementById('modalBackdrop');
+  const modalClose = document.getElementById('modalClose');
+  const modalCategory = document.getElementById('modalCategory');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalSubtitle = document.getElementById('modalSubtitle');
+  const modalActiveImg = document.getElementById('modalActiveImg');
+  const modalThumbs = document.getElementById('modalThumbs');
+  const modalPrev = document.getElementById('modalPrev');
+  const modalNext = document.getElementById('modalNext');
+
+  // Complete Project Galleries Data
+  const projectGalleries = {
+    'nishad-residence': {
+      title: "The Nishad Residence",
+      category: "LUXURY RESIDENTIAL",
+      subtitle: "Bespoke Villa Architectural Interior & Turnkey Fit-Out (19 Photos)",
+      images: [
+        'images/nishad/LIVING.png',
+        'images/nishad/LIVING 2.png',
+        'images/nishad/LIVING 3.png',
+        'images/nishad/DINING.png',
+        'images/nishad/DINING1.png',
+        'images/nishad/kitchen.jpg',
+        'images/nishad/master.jpg',
+        'images/nishad/bedroom 3.jpg',
+        'images/nishad/kids room.jpg',
+        'images/nishad/ladies living.jpg',
+        'images/nishad/enhanced_e.png',
+        'images/nishad/enhanced_F.png',
+        'images/nishad/nishad.png',
+        'images/nishad/nishad1.png',
+        'images/nishad/1.jpg',
+        'images/nishad/2.jpg',
+        'images/nishad/13.jpg',
+        'images/nishad/14.jpg',
+        'images/nishad/15.jpg'
+      ]
+    },
+    'executive-office': {
+      title: "Executive Office Fit-Out",
+      category: "OFFICE & COMMERCIAL",
+      subtitle: "Acoustic Glass Partitions & Corporate Workspaces (5 Photos)",
+      images: [
+        'images/office_glass_fitout1.jpg',
+        'images/office_glass_fitout2.jpg',
+        'images/office_glass_fitout3.jpg',
+        'images/office_glass_fitout4.jpg',
+        'images/office_glass_fitout5.jpg'
+      ]
+    },
+    'commercial-retail': {
+      title: "Bespoke Retail & Café Fit-Out",
+      category: "COMMERCIAL & RETAIL",
+      subtitle: "Bespoke Boutique Retail, Salons & Commercial Spaces",
+      images: [
+        'images/service_retail.jpg'
+      ]
+    },
+    'custom-joinery': {
+      title: "Custom Joinery & Millwork",
+      category: "RESIDENTIAL & COMMERCIAL JOINERY",
+      subtitle: "Precision Architectural Millwork, Kitchens & Wardrobes",
+      images: [
+        'images/service_joinery.jpg'
+      ]
+    }
+  };
+
+  if (projectModal) {
+    let currentGalleryImages = [];
+    const modalGridGallery = document.getElementById('modalGridGallery');
+    const photoZoomOverlay = document.getElementById('photoZoomOverlay');
+    const zoomImage = document.getElementById('zoomImage');
+    const zoomClose = document.getElementById('zoomClose');
+
+    const openProjectGallery = (key) => {
+      const data = projectGalleries[key] || projectGalleries['nishad-residence'];
+      currentGalleryImages = data.images;
+
+      if (modalCategory) modalCategory.textContent = data.category;
+      if (modalTitle) modalTitle.textContent = data.title;
+      if (modalSubtitle) modalSubtitle.textContent = `Click any photo to enlarge (${currentGalleryImages.length} Photos)`;
+
+      // Render ALL photos together in grid
+      if (modalGridGallery) {
+        modalGridGallery.innerHTML = '';
+        currentGalleryImages.forEach((imgSrc, idx) => {
+          const card = document.createElement('div');
+          card.className = 'modal-photo-card';
+          card.innerHTML = `<img src="${imgSrc}" alt="Project Photo ${idx + 1}" loading="lazy">`;
+          card.addEventListener('click', () => {
+            if (zoomImage && photoZoomOverlay) {
+              zoomImage.src = imgSrc;
+              photoZoomOverlay.classList.add('active');
+            }
+          });
+          modalGridGallery.appendChild(card);
+        });
+      }
+
+      projectModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeProjectModal = () => {
+      projectModal.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    const closeZoomOverlay = () => {
+      if (photoZoomOverlay) photoZoomOverlay.classList.remove('active');
+    };
+
+    if (modalClose) modalClose.addEventListener('click', closeProjectModal);
+    if (modalBackdrop) modalBackdrop.addEventListener('click', closeProjectModal);
+    if (zoomClose) zoomClose.addEventListener('click', closeZoomOverlay);
+    if (photoZoomOverlay) {
+      photoZoomOverlay.addEventListener('click', (e) => {
+        if (e.target === photoZoomOverlay || e.target === zoomClose) {
+          closeZoomOverlay();
+        }
+      });
+    }
+
+    // Attach click triggers to all cards with data-project
+    document.querySelectorAll('[data-project]').forEach(card => {
+      card.addEventListener('click', () => {
+        const projectKey = card.getAttribute('data-project');
+        openProjectGallery(projectKey);
+      });
+    });
+  }
 });
+
+
 

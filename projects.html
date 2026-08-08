@@ -64,96 +64,68 @@
           <button class="filter-btn active" data-filter="all">ALL PROJECTS</button>
           <button class="filter-btn" data-filter="office">OFFICE & FIT-OUT</button>
           <button class="filter-btn" data-filter="residential">LUXURY RESIDENTIAL</button>
-          <button class="filter-btn" data-filter="commercial">COMMERCIAL & RETAIL</button>
+          <button class="filter-btn" data-filter="architecture">EXTERIOR & ARCHITECTURE</button>
         </div>
 
         <!-- Projects Grid -->
         <div class="projects-gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 30px;">
 
-          <!-- Project 1 -->
-          <div class="project-gallery-item" data-category="office">
-            <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 280px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
-              <img src="images/office_glass_fitout1.jpg" alt="Executive Glass Partitioning" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
+          <!-- Project Card 1: The Nishad Residence -->
+          <div class="project-gallery-item" data-category="residential" data-project="nishad-residence">
+            <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 340px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
+              <img src="images/nishad/LIVING.png" alt="The Nishad Residence" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
               <div class="project-overlay-details" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,13,14,0.1) 0%, rgba(12,13,14,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; color: #fff; transition: all var(--transition-normal);">
-                <span style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold); font-weight: 600;">Office Fit-Out</span>
-                <h3 style="font-family: var(--font-serif); font-size: 1.4rem; font-weight: 500; margin-top: 4px;">Executive Glass Partitioning</h3>
+                <span style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold); font-weight: 600;">Luxury Villa Residence • 19 Photos</span>
+                <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 500; margin-top: 4px;">The Nishad Residence</h3>
+                <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7); margin-top: 4px; display: flex; align-items: center; gap: 6px;">
+                  <span>Click to view full residence gallery</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </p>
               </div>
             </div>
           </div>
 
-          <!-- Project 2 -->
-          <div class="project-gallery-item" data-category="office">
-            <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 280px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
-              <img src="images/office_glass_fitout2.jpg" alt="Curved Glass Acoustic Suite" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
+          <!-- Project Card 2: Executive Office Fit-Out -->
+          <div class="project-gallery-item" data-category="office" data-project="executive-office">
+            <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 340px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
+              <img src="images/office_glass_fitout1.jpg" alt="Executive Office Fit-Out" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
               <div class="project-overlay-details" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,13,14,0.1) 0%, rgba(12,13,14,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; color: #fff; transition: all var(--transition-normal);">
-                <span style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold); font-weight: 600;">Acoustic Walls & Ceilings</span>
-                <h3 style="font-family: var(--font-serif); font-size: 1.4rem; font-weight: 500; margin-top: 4px;">Curved Glass Acoustic Suite</h3>
+                <span style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold); font-weight: 600;">Office Fit-Out • 5 Photos</span>
+                <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 500; margin-top: 4px;">Executive Office Fit-Out</h3>
+                <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7); margin-top: 4px; display: flex; align-items: center; gap: 6px;">
+                  <span>Click to view office gallery</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </p>
               </div>
             </div>
           </div>
 
-          <!-- Project 3 -->
-          <div class="project-gallery-item" data-category="office">
-            <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 280px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
-              <img src="images/office_glass_fitout3.jpg" alt="Modern Corporate Workspace" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
-              <div class="project-overlay-details" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,13,14,0.1) 0%, rgba(12,13,14,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; color: #fff; transition: all var(--transition-normal);">
-                <span style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold); font-weight: 600;">Corporate Interior</span>
-                <h3 style="font-family: var(--font-serif); font-size: 1.4rem; font-weight: 500; margin-top: 4px;">Modern Corporate Workspace</h3>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 4 -->
-          <div class="project-gallery-item" data-category="office">
-            <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 280px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
-              <img src="images/office_glass_fitout4.jpg" alt="Frosted Architectural Partition" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
-              <div class="project-overlay-details" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,13,14,0.1) 0%, rgba(12,13,14,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; color: #fff; transition: all var(--transition-normal);">
-                <span style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold); font-weight: 600;">Architectural Partitioning</span>
-                <h3 style="font-family: var(--font-serif); font-size: 1.4rem; font-weight: 500; margin-top: 4px;">Frosted Architectural Partition</h3>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 5 -->
-          <div class="project-gallery-item" data-category="office">
-            <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 280px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
-              <img src="images/office_glass_fitout5.jpg" alt="Bespoke Commercial Office" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
-              <div class="project-overlay-details" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,13,14,0.1) 0%, rgba(12,13,14,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; color: #fff; transition: all var(--transition-normal);">
-                <span style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold); font-weight: 600;">Executive Suite</span>
-                <h3 style="font-family: var(--font-serif); font-size: 1.4rem; font-weight: 500; margin-top: 4px;">Bespoke Commercial Office</h3>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 6 -->
-          <div class="project-gallery-item" data-category="residential">
-            <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 280px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
-              <img src="images/service_villa.jpg" alt="Turnkey Luxury Villa" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
-              <div class="project-overlay-details" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,13,14,0.1) 0%, rgba(12,13,14,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; color: #fff; transition: all var(--transition-normal);">
-                <span style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold); font-weight: 600;">Full Villa Fit-Out</span>
-                <h3 style="font-family: var(--font-serif); font-size: 1.4rem; font-weight: 500; margin-top: 4px;">Turnkey Luxury Villa Residence</h3>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 7 -->
-          <div class="project-gallery-item" data-category="commercial">
-            <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 280px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
-              <img src="images/service_retail.jpg" alt="Bespoke Retail Salon & Cafe" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
+          <!-- Project Card 3: Commercial & Retail Fit-Out -->
+          <div class="project-gallery-item" data-category="commercial" data-project="commercial-retail">
+            <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 340px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
+              <img src="images/service_retail.jpg" alt="Commercial & Retail Spaces" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
               <div class="project-overlay-details" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,13,14,0.1) 0%, rgba(12,13,14,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; color: #fff; transition: all var(--transition-normal);">
                 <span style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold); font-weight: 600;">Commercial & Retail</span>
-                <h3 style="font-family: var(--font-serif); font-size: 1.4rem; font-weight: 500; margin-top: 4px;">Bespoke Retail Salon & Café</h3>
+                <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 500; margin-top: 4px;">Bespoke Retail & Cafe Fit-Out</h3>
+                <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7); margin-top: 4px; display: flex; align-items: center; gap: 6px;">
+                  <span>Click to view commercial gallery</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </p>
               </div>
             </div>
           </div>
 
-          <!-- Project 8 -->
-          <div class="project-gallery-item" data-category="residential">
-            <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 280px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
-              <img src="images/project1.jpg" alt="Private Luxury Living Space" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
+          <!-- Project Card 4: Custom Joinery & Millwork -->
+          <div class="project-gallery-item" data-category="residential" data-project="custom-joinery">
+            <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 340px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
+              <img src="images/service_joinery.jpg" alt="Architectural Joinery" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
               <div class="project-overlay-details" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,13,14,0.1) 0%, rgba(12,13,14,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; color: #fff; transition: all var(--transition-normal);">
-                <span style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold); font-weight: 600;">Residential Architecture</span>
-                <h3 style="font-family: var(--font-serif); font-size: 1.4rem; font-weight: 500; margin-top: 4px;">Private Luxury Living Suite</h3>
+                <span style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold); font-weight: 600;">Custom Joinery</span>
+                <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 500; margin-top: 4px;">Custom Joinery & Millwork</h3>
+                <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7); margin-top: 4px; display: flex; align-items: center; gap: 6px;">
+                  <span>Click to view joinery gallery</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </p>
               </div>
             </div>
           </div>
@@ -179,6 +151,30 @@
     </section>
 
   </main>
+
+  <!-- Project Modal Lightbox -->
+  <div class="project-modal" id="projectModal">
+    <div class="project-modal-backdrop" id="modalBackdrop"></div>
+    <div class="project-modal-content">
+      <button class="project-modal-close" id="modalClose" aria-label="Close Gallery">&times;</button>
+      <div class="project-modal-header">
+        <span class="section-tag-gold" id="modalCategory">LUXURY RESIDENTIAL</span>
+        <h2 class="modal-title" id="modalTitle">The Nishad Residence</h2>
+        <p class="modal-subtitle" id="modalSubtitle">Click any photo to enlarge in full-screen view</p>
+      </div>
+      
+      <div class="project-modal-body">
+        <!-- All Photos Grid Gallery -->
+        <div class="modal-grid-gallery" id="modalGridGallery"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full-Screen Zoom Lightbox -->
+  <div class="photo-zoom-overlay" id="photoZoomOverlay">
+    <button class="photo-zoom-close" id="zoomClose" aria-label="Close Fullscreen">&times;</button>
+    <img id="zoomImage" src="" alt="Enlarged Photo View">
+  </div>
 
   <!-- Footer -->
   <footer class="site-footer">
