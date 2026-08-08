@@ -1460,6 +1460,36 @@ img {
   }
 }
 
+/* ----------------------------------------------------
+   PROJECTS GALLERY & FILTER BUTTONS
+---------------------------------------------------- */
+.filter-btn {
+  background: var(--bg-light-card);
+  border: 1px solid rgba(201, 158, 117, 0.3);
+  color: var(--text-dark-primary);
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--accent-gold);
+  color: #ffffff;
+  border-color: var(--accent-gold);
+  box-shadow: 0 4px 14px rgba(201, 158, 117, 0.3);
+}
+
+.project-gallery-item:hover .project-img-wrapper img {
+  transform: scale(1.06);
+}
+
+
 
 
 
