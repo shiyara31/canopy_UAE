@@ -686,9 +686,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 8. Scroll Reveal Observer Animation
+  // 8. Scroll Reveal Observer Animation (excluding homepage projects section)
   const revealTargets = document.querySelectorAll(
-    '.service-card, .project-card, .stat-item, .section-heading, .section-heading-light, .section-tag, .section-tag-gold, .hero-content, .value-card, .process-step, .about-intro-content, .contact-form, .modal-photo-card'
+    '.service-card, .stat-item, .section-heading, .section-heading-light, .section-tag, .section-tag-gold, .hero-content, .value-card, .about-intro-content, .contact-form'
   );
 
   revealTargets.forEach(el => {

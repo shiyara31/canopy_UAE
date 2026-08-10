@@ -2121,3 +2121,25 @@ img {
     transform: translateX(0);
   }
 }
+
+/* Disable All Animations for Projects Section under Home Page */
+.featured-projects-section .project-card,
+.featured-projects-section .project-card *,
+.featured-projects-section .projects-carousel-wrapper,
+.featured-projects-section .projects-carousel-track {
+  opacity: 1 !important;
+  animation: none !important;
+}
+
+.featured-projects-section .project-card::before {
+  display: none !important;
+}
+
+.featured-projects-section .project-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.featured-projects-section .project-card:hover .project-img-box img {
+  transform: none !important;
+}
