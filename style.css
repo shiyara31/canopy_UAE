@@ -1463,6 +1463,46 @@ img {
 /* ----------------------------------------------------
    PROJECTS GALLERY & FILTER BUTTONS
 ---------------------------------------------------- */
+.main-status-tabs-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.main-status-tabs {
+  display: inline-flex;
+  background: var(--bg-dark);
+  padding: 6px;
+  border-radius: var(--radius-pill);
+  gap: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.status-tab {
+  background: transparent;
+  border: none;
+  color: var(--text-light-secondary);
+  padding: 12px 30px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.status-tab:hover {
+  color: #ffffff;
+}
+
+.status-tab.active {
+  background: var(--accent-gold);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(201, 158, 117, 0.4);
+}
+
 .filter-btn {
   background: var(--bg-light-card);
   border: 1px solid rgba(201, 158, 117, 0.3);

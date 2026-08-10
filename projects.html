@@ -59,19 +59,33 @@
     <section style="padding: 20px 0 100px 0;">
       <div class="container">
         
-        <!-- Filter Tabs -->
-        <div class="projects-filter-tabs" style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 40px;">
-          <button class="filter-btn active" data-filter="all">ALL PROJECTS</button>
-          <button class="filter-btn" data-filter="office">OFFICE & FIT-OUT</button>
+        <!-- Main Status Tabs (Completed Projects vs Ongoing Projects) -->
+        <div class="main-status-tabs-wrapper">
+          <div class="main-status-tabs">
+            <button class="status-tab active" data-status-tab="completed">COMPLETED PROJECTS</button>
+            <button class="status-tab" data-status-tab="ongoing">ONGOING PROJECTS</button>
+          </div>
+        </div>
+
+        <!-- Sub-Category Filter Container for Completed Projects -->
+        <div class="projects-filter-tabs sub-filter-container" id="completedSubFilters" style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 40px;">
+          <button class="filter-btn active" data-filter="all-completed">ALL COMPLETED</button>
           <button class="filter-btn" data-filter="residential">LUXURY RESIDENTIAL</button>
           <button class="filter-btn" data-filter="architecture">EXTERIOR & ARCHITECTURE</button>
+          <button class="filter-btn" data-filter="office">OFFICE & FIT-OUT</button>
+        </div>
+
+        <!-- Sub-Category Filter Container for Ongoing Projects -->
+        <div class="projects-filter-tabs sub-filter-container" id="ongoingSubFilters" style="display: none; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 40px;">
+          <button class="filter-btn active" data-filter="all-ongoing">ALL ONGOING SITE WORK</button>
         </div>
 
         <!-- Projects Grid -->
         <div class="projects-gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 30px;">
 
+          <!-- COMPLETED PROJECTS -->
           <!-- Project Card 1: The Nishad Residence -->
-          <div class="project-gallery-item" data-category="residential" data-project="nishad-residence">
+          <div class="project-gallery-item" data-status="completed" data-category="residential" data-project="nishad-residence">
             <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 340px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
               <img src="images/nishad/LIVING.png" alt="The Nishad Residence" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
               <div class="project-overlay-details" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,13,14,0.1) 0%, rgba(12,13,14,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; color: #fff; transition: all var(--transition-normal);">
@@ -86,7 +100,7 @@
           </div>
 
           <!-- Project Card 2: The Sameer Residence -->
-          <div class="project-gallery-item" data-category="residential" data-project="sameer-residence">
+          <div class="project-gallery-item" data-status="completed" data-category="residential" data-project="sameer-residence">
             <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 340px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
               <img src="images/sameer/m1.jpg" alt="The Sameer Residence" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
               <div class="project-overlay-details" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,13,14,0.1) 0%, rgba(12,13,14,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; color: #fff; transition: all var(--transition-normal);">
@@ -101,7 +115,7 @@
           </div>
 
           <!-- Project Card 3: The Khader Residence -->
-          <div class="project-gallery-item" data-category="residential" data-project="khader-residence">
+          <div class="project-gallery-item" data-status="completed" data-category="residential" data-project="khader-residence">
             <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 340px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
               <img src="images/khader/2.jpg" alt="The Khader Residence" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
               <div class="project-overlay-details" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,13,14,0.1) 0%, rgba(12,13,14,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; color: #fff; transition: all var(--transition-normal);">
@@ -116,7 +130,7 @@
           </div>
 
           <!-- Project Card 4: The Nazar Residence -->
-          <div class="project-gallery-item" data-category="residential" data-project="nazar-residence">
+          <div class="project-gallery-item" data-status="completed" data-category="residential" data-project="nazar-residence">
             <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 340px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
               <img src="images/nazar/living.webp" alt="The Nazar Residence" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
               <div class="project-overlay-details" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,13,14,0.1) 0%, rgba(12,13,14,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; color: #fff; transition: all var(--transition-normal);">
@@ -130,8 +144,23 @@
             </div>
           </div>
 
-          <!-- Project Card 2: Executive Office Fit-Out -->
-          <div class="project-gallery-item" data-category="office" data-project="executive-office">
+          <!-- Project Card 5: Exterior & Architecture -->
+          <div class="project-gallery-item" data-status="completed" data-category="architecture" data-project="exterior-architecture">
+            <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 340px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
+              <img src="images/exterior/5.jpg" alt="Luxury Villa Exterior & Architecture" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
+              <div class="project-overlay-details" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,13,14,0.1) 0%, rgba(12,13,14,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; color: #fff; transition: all var(--transition-normal);">
+                <span style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold); font-weight: 600;">Exterior & Architecture • 5 Photos</span>
+                <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 500; margin-top: 4px;">Luxury Villa Exterior Work</h3>
+                <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7); margin-top: 4px; display: flex; align-items: center; gap: 6px;">
+                  <span>Click to view exterior architecture gallery</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 6: Executive Office Fit-Out -->
+          <div class="project-gallery-item" data-status="completed" data-category="office" data-project="executive-office">
             <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 340px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
               <img src="images/office_glass_fitout1.jpg" alt="Executive Office Fit-Out" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
               <div class="project-overlay-details" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,13,14,0.1) 0%, rgba(12,13,14,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; color: #fff; transition: all var(--transition-normal);">
@@ -145,30 +174,15 @@
             </div>
           </div>
 
-          <!-- Project Card 3: Commercial & Retail Fit-Out -->
-          <div class="project-gallery-item" data-category="commercial" data-project="commercial-retail">
+          <!-- ONGOING PROJECTS (1 Unified Box containing all 6 photos) -->
+          <div class="project-gallery-item" data-status="ongoing" data-category="all-ongoing" data-project="ongoing-projects" style="display: none;">
             <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 340px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
-              <img src="images/service_retail.jpg" alt="Commercial & Retail Spaces" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
+              <img src="images/ongoing/3.jpg" alt="Ongoing Fit-Out & Site Progress" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
               <div class="project-overlay-details" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,13,14,0.1) 0%, rgba(12,13,14,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; color: #fff; transition: all var(--transition-normal);">
-                <span style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold); font-weight: 600;">Commercial & Retail</span>
-                <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 500; margin-top: 4px;">Bespoke Retail & Cafe Fit-Out</h3>
+                <span style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold); font-weight: 600;">On-Site Execution • 6 Photos</span>
+                <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 500; margin-top: 4px;">Ongoing Fit-Out & Site Progress</h3>
                 <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7); margin-top: 4px; display: flex; align-items: center; gap: 6px;">
-                  <span>Click to view commercial gallery</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project Card 4: Custom Joinery & Millwork -->
-          <div class="project-gallery-item" data-category="residential" data-project="custom-joinery">
-            <div class="project-img-wrapper" style="position: relative; overflow: hidden; border-radius: var(--radius-card); height: 340px; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
-              <img src="images/service_joinery.jpg" alt="Architectural Joinery" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
-              <div class="project-overlay-details" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,13,14,0.1) 0%, rgba(12,13,14,0.85) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; color: #fff; transition: all var(--transition-normal);">
-                <span style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold); font-weight: 600;">Custom Joinery</span>
-                <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 500; margin-top: 4px;">Custom Joinery & Millwork</h3>
-                <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7); margin-top: 4px; display: flex; align-items: center; gap: 6px;">
-                  <span>Click to view joinery gallery</span>
+                  <span>Click to view all ongoing site photos</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </p>
               </div>
@@ -261,17 +275,16 @@
             <li>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               <div>
-                <a href="tel:+918089231332">+91 80892 31332 (KERALA)</a><br>
-                <a href="tel:+971563451439">+971 563451439 (DUBAI)</a>
+                <a href="tel:+971563451439">+971 563451439 (DUBAI, UAE)</a>
               </div>
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <a href="mailto:hello@canopy.ae">hello@canopy.ae</a>
+              <a href="mailto:Canopy.company555@gmail.com">Canopy.company555@gmail.com</a>
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Dubai, UAE / Kerala, India</span>
+              <span>Dubai, UAE / India</span>
             </li>
           </ul>
         </div>

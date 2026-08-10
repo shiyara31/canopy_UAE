@@ -28,11 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
   }
 
-  // 4. Featured Projects Horizontal Side-by-Side Scroll & Drag
-  const wrapper = document.querySelector('.projects-carousel-wrapper');
-  const dotsContainer = document.getElementById('carouselDots');
+  // 4. Featured Projects Horizontal Side-by-Side Scroll & Drag (Supports multiple carousels)
+  const wrappers = document.querySelectorAll('.projects-carousel-wrapper');
 
-  if (wrapper) {
+  wrappers.forEach(wrapper => {
     let isDown = false;
     let startX;
     let scrollLeft;
@@ -64,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Update active dot on scroll & dot click scrolling
+    const dotsContainer = wrapper.querySelector('.carousel-dots');
     if (dotsContainer) {
       const dots = dotsContainer.querySelectorAll('.dot');
       const cardWidth = 364; // 340px card width + 24px gap
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     }
-  }
+  });
 
   // 5. Stat Counter Animation
   const statCounters = document.querySelectorAll('.stat-counter');
@@ -126,27 +126,91 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 6. Projects Gallery Filter Tabs
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  // 6. Projects Gallery Status Tabs (Completed vs Ongoing) & Sub-Category Filters
+  const statusTabs = document.querySelectorAll('.status-tab');
+  const completedSubFilters = document.getElementById('completedSubFilters');
+  const ongoingSubFilters = document.getElementById('ongoingSubFilters');
   const projectItems = document.querySelectorAll('.project-gallery-item');
 
-  if (filterBtns.length > 0 && projectItems.length > 0) {
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const filterValue = btn.getAttribute('data-filter');
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+  if (statusTabs.length > 0 && projectItems.length > 0) {
+    let currentStatus = 'completed';
+    let currentCompletedFilter = 'all-completed';
+    let currentOngoingFilter = 'all-ongoing';
 
-        projectItems.forEach(item => {
-          const category = item.getAttribute('data-category');
-          if (filterValue === 'all' || category === filterValue) {
+    const updateProjectVisibility = () => {
+      projectItems.forEach(item => {
+        const itemStatus = item.getAttribute('data-status');
+        const itemCategory = item.getAttribute('data-category');
+
+        if (itemStatus !== currentStatus) {
+          item.style.display = 'none';
+          return;
+        }
+
+        if (currentStatus === 'completed') {
+          if (currentCompletedFilter === 'all-completed' || itemCategory === currentCompletedFilter) {
             item.style.display = 'block';
           } else {
             item.style.display = 'none';
           }
-        });
+        } else if (currentStatus === 'ongoing') {
+          if (currentOngoingFilter === 'all-ongoing' || itemCategory === currentOngoingFilter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        }
+      });
+    };
+
+    // Main Status Tab Click Handler
+    statusTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        statusTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        currentStatus = tab.getAttribute('data-status-tab');
+
+        if (currentStatus === 'completed') {
+          if (completedSubFilters) completedSubFilters.style.display = 'flex';
+          if (ongoingSubFilters) ongoingSubFilters.style.display = 'none';
+        } else {
+          if (completedSubFilters) completedSubFilters.style.display = 'none';
+          if (ongoingSubFilters) ongoingSubFilters.style.display = 'flex';
+        }
+
+        updateProjectVisibility();
       });
     });
+
+    // Completed Sub-Filters Click Handler
+    if (completedSubFilters) {
+      const cBtns = completedSubFilters.querySelectorAll('.filter-btn');
+      cBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          cBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentCompletedFilter = btn.getAttribute('data-filter');
+          updateProjectVisibility();
+        });
+      });
+    }
+
+    // Ongoing Sub-Filters Click Handler
+    if (ongoingSubFilters) {
+      const oBtns = ongoingSubFilters.querySelectorAll('.filter-btn');
+      oBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          oBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentOngoingFilter = btn.getAttribute('data-filter');
+          updateProjectVisibility();
+        });
+      });
+    }
+
+    // Initial Filter Run
+    updateProjectVisibility();
   }
 
   // 7. Project Modal Lightbox Gallery
@@ -361,6 +425,67 @@ document.addEventListener('DOMContentLoaded', () => {
         'images/nazar/outdoor.webp',
         'images/nazar/outdoor01.webp',
         'images/nazar/02.webp'
+      ]
+    },
+    'exterior-architecture': {
+      title: "Luxury Villa Exterior Work",
+      category: "EXTERIOR & ARCHITECTURE",
+      subtitle: "Bespoke Modern Villa Exteriors, Board-Formed Concrete Facades & Desert Architecture Concepts (5 Photos)",
+      images: [
+        'images/exterior/5.jpg',
+        'images/exterior/4.jpg',
+        'images/exterior/1.jpg',
+        'images/exterior/2.jpg',
+        'images/exterior/3.jpg'
+      ]
+    },
+    'ongoing-projects': {
+      title: "Ongoing Fit-Out & Site Progress",
+      category: "ONGOING & ON-SITE EXECUTION",
+      subtitle: "Behind-the-Scenes Turnkey Execution, Custom Joinery Craftsmanship & On-Site Installation in Dubai (6 Photos)",
+      images: [
+        'images/ongoing/3.jpg',
+        'images/ongoing/2.jpg',
+        'images/ongoing/1.jpg',
+        'images/ongoing/4.jpg',
+        'images/ongoing/5.jpg',
+        'images/ongoing/6.jpg'
+      ]
+    },
+    'ongoing-penthouse': {
+      title: "Dubai High-Rise Penthouse Fit-Out",
+      category: "ON-SITE EXECUTION",
+      subtitle: "Full High-Rise Interior Renovation, Panoramic Framing & Site Supervision (3 Photos)",
+      images: [
+        'images/ongoing/3.jpg',
+        'images/ongoing/2.jpg',
+        'images/ongoing/4.jpg'
+      ]
+    },
+    'ongoing-factory': {
+      title: "Custom Marble & Joinery Workshop",
+      category: "FACTORY CRAFTSMANSHIP",
+      subtitle: "In-House Precision Millwork, Marble Cutting & Edge Polishing",
+      images: [
+        'images/ongoing/1.jpg'
+      ]
+    },
+    'ongoing-framing': {
+      title: "Acoustic Framing & Electrical MEP",
+      category: "SITE FRAMING & MEP",
+      subtitle: "Structural Metal Partitioning, Ceiling Grid Setup & Cable Channelling",
+      images: [
+        'images/ongoing/2.jpg',
+        'images/ongoing/4.jpg'
+      ]
+    },
+    'ongoing-assembly': {
+      title: "Bespoke Furniture Installation",
+      category: "ON-SITE ASSEMBLY",
+      subtitle: "Custom Bed Frame & Luxury Furniture On-Site Fitting",
+      images: [
+        'images/ongoing/5.jpg',
+        'images/ongoing/6.jpg'
       ]
     },
     'executive-office': {
