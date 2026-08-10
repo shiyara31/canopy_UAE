@@ -632,8 +632,17 @@
 
   <!-- Fullscreen Photo Zoom Lightbox -->
   <div class="photo-zoom-overlay" id="photoZoomOverlay">
-    <span class="zoom-close-btn" id="zoomClose">&times;</span>
-    <img src="" id="zoomImage" alt="Enlarged View">
+    <button class="photo-zoom-close" id="zoomClose" aria-label="Close Fullscreen">&times;</button>
+    <button class="photo-zoom-nav zoom-prev" id="zoomPrev" aria-label="Previous Photo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <div class="photo-zoom-container">
+      <img src="" id="zoomImage" alt="Enlarged View">
+      <div class="photo-zoom-counter" id="zoomCounter">1 / 1</div>
+    </div>
+    <button class="photo-zoom-nav zoom-next" id="zoomNext" aria-label="Next Photo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
   </div>
 
   <script src="script.js"></script>

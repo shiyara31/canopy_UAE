@@ -604,10 +604,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (projectModal) {
     let currentGalleryImages = [];
+    let currentZoomIndex = 0;
+
     const modalGridGallery = document.getElementById('modalGridGallery');
     const photoZoomOverlay = document.getElementById('photoZoomOverlay');
     const zoomImage = document.getElementById('zoomImage');
     const zoomClose = document.getElementById('zoomClose');
+    const zoomPrev = document.getElementById('zoomPrev');
+    const zoomNext = document.getElementById('zoomNext');
+
+    const updateZoomView = (index) => {
+      if (!currentGalleryImages || currentGalleryImages.length === 0) return;
+
+      if (index < 0) {
+        currentZoomIndex = currentGalleryImages.length - 1;
+      } else if (index >= currentGalleryImages.length) {
+        currentZoomIndex = 0;
+      } else {
+        currentZoomIndex = index;
+      }
+
+      if (zoomImage) {
+        zoomImage.src = currentGalleryImages[currentZoomIndex];
+      }
+
+      const activeCounter = document.getElementById('zoomCounter');
+      if (activeCounter) {
+        activeCounter.textContent = `${currentZoomIndex + 1} / ${currentGalleryImages.length}`;
+      }
+
+      const activePrev = document.getElementById('zoomPrev');
+      const activeNext = document.getElementById('zoomNext');
+      if (activePrev) activePrev.style.display = currentGalleryImages.length > 1 ? 'flex' : 'none';
+      if (activeNext) activeNext.style.display = currentGalleryImages.length > 1 ? 'flex' : 'none';
+    };
 
     const openProjectGallery = (key) => {
       const data = projectGalleries[key] || projectGalleries['nishad-residence'];
@@ -626,7 +656,7 @@ document.addEventListener('DOMContentLoaded', () => {
           card.innerHTML = `<img src="${imgSrc}" alt="Project Photo ${idx + 1}" loading="lazy">`;
           card.addEventListener('click', () => {
             if (zoomImage && photoZoomOverlay) {
-              zoomImage.src = imgSrc;
+              updateZoomView(idx);
               photoZoomOverlay.classList.add('active');
             }
           });
@@ -650,13 +680,67 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalClose) modalClose.addEventListener('click', closeProjectModal);
     if (modalBackdrop) modalBackdrop.addEventListener('click', closeProjectModal);
     if (zoomClose) zoomClose.addEventListener('click', closeZoomOverlay);
+
+    // Bind next / prev arrow navigation buttons
+    if (zoomPrev) {
+      zoomPrev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        updateZoomView(currentZoomIndex - 1);
+      });
+    }
+    if (zoomNext) {
+      zoomNext.addEventListener('click', (e) => {
+        e.stopPropagation();
+        updateZoomView(currentZoomIndex + 1);
+      });
+    }
+
     if (photoZoomOverlay) {
       photoZoomOverlay.addEventListener('click', (e) => {
-        if (e.target === photoZoomOverlay || e.target === zoomClose) {
+        if (
+          e.target === photoZoomOverlay || 
+          e.target === zoomClose || 
+          e.target.id === 'zoomClose' || 
+          e.target.classList.contains('photo-zoom-close') || 
+          e.target.classList.contains('zoom-close-btn')
+        ) {
           closeZoomOverlay();
         }
       });
+
+      // Touch swipe support for mobile devices
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      photoZoomOverlay.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      photoZoomOverlay.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diffX = touchEndX - touchStartX;
+        if (Math.abs(diffX) > 40) {
+          if (diffX < 0) {
+            updateZoomView(currentZoomIndex + 1);
+          } else {
+            updateZoomView(currentZoomIndex - 1);
+          }
+        }
+      }, { passive: true });
     }
+
+    // Keyboard Arrow Key Navigation (Left/Right & Escape)
+    document.addEventListener('keydown', (e) => {
+      if (!photoZoomOverlay || !photoZoomOverlay.classList.contains('active')) return;
+
+      if (e.key === 'ArrowLeft') {
+        updateZoomView(currentZoomIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        updateZoomView(currentZoomIndex + 1);
+      } else if (e.key === 'Escape') {
+        closeZoomOverlay();
+      }
+    });
 
     // Attach click triggers to all cards with data-project
     document.querySelectorAll('[data-project]').forEach(card => {
