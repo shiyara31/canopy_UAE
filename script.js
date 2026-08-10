@@ -1,11 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Header scroll effect
+  // 1. Header scroll effect & Top Progress Bar
   const header = document.getElementById('header');
+  const scrollProgress = document.getElementById('scrollProgress');
+
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+    if (header) {
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (totalHeight > 0 && scrollProgress) {
+      const progress = (window.scrollY / totalHeight) * 100;
+      scrollProgress.style.width = `${progress}%`;
     }
   });
 
@@ -442,14 +452,24 @@ document.addEventListener('DOMContentLoaded', () => {
     'ongoing-projects': {
       title: "Ongoing Fit-Out & Site Progress",
       category: "ONGOING & ON-SITE EXECUTION",
-      subtitle: "Behind-the-Scenes Turnkey Execution, Custom Joinery Craftsmanship & On-Site Installation in Dubai (6 Photos)",
+      subtitle: "Behind-the-Scenes Turnkey Execution, Emaar Creek Harbour, Tilal City Sharjah, Interior & Exterior Site Progress (16 Photos)",
       images: [
-        'images/ongoing/3.jpg',
-        'images/ongoing/2.jpg',
         'images/ongoing/1.jpg',
+        'images/ongoing/2.jpg',
+        'images/ongoing/3.jpg',
         'images/ongoing/4.jpg',
         'images/ongoing/5.jpg',
-        'images/ongoing/6.jpg'
+        'images/ongoing/6.jpg',
+        'images/ongoing/7.jpg',
+        'images/ongoing/8.jpg',
+        'images/ongoing/9.jpg',
+        'images/ongoing/10.jpg',
+        'images/ongoing/11.jpg',
+        'images/ongoing/12.jpg',
+        'images/ongoing/13.jpg',
+        'images/ongoing/14.jpg',
+        'images/ongoing/15.jpg',
+        'images/ongoing/16.jpg'
       ]
     },
     'ongoing-penthouse': {
@@ -500,20 +520,84 @@ document.addEventListener('DOMContentLoaded', () => {
         'images/office_glass_fitout5.jpg'
       ]
     },
-    'commercial-retail': {
-      title: "Bespoke Retail & Café Fit-Out",
-      category: "COMMERCIAL & RETAIL",
-      subtitle: "Bespoke Boutique Retail, Salons & Commercial Spaces",
+    'shabana-residence': {
+      title: "The Shabana Residence (Ajman)",
+      category: "LUXURY RESIDENTIAL",
+      subtitle: "Bespoke Modern Villa Fit-Out & Architectural Interior (22 Photos)",
       images: [
-        'images/service_retail.jpg'
+        'images/shabana/1.jpeg',
+        'images/shabana/2.jpeg',
+        'images/shabana/3.jpeg',
+        'images/shabana/4.jpeg',
+        'images/shabana/5.jpeg',
+        'images/shabana/6.jpeg',
+        'images/shabana/7.jpeg',
+        'images/shabana/8.jpeg',
+        'images/shabana/9.jpeg',
+        'images/shabana/10.jpeg',
+        'images/shabana/11.jpeg',
+        'images/shabana/12.jpeg',
+        'images/shabana/13.jpeg',
+        'images/shabana/14.jpeg',
+        'images/shabana/15.jpeg',
+        'images/shabana/16.jpeg',
+        'images/shabana/17.jpeg',
+        'images/shabana/18.jpeg',
+        'images/shabana/19.jpeg',
+        'images/shabana/20.jpeg',
+        'images/shabana/21.jpeg',
+        'images/shabana/22.jpeg'
       ]
     },
-    'custom-joinery': {
-      title: "Custom Joinery & Millwork",
-      category: "RESIDENTIAL & COMMERCIAL JOINERY",
-      subtitle: "Precision Architectural Millwork, Kitchens & Wardrobes",
+    'arada-masaar': {
+      title: "Arada Masaar Luxury Villa",
+      category: "LUXURY RESIDENTIAL",
+      subtitle: "Signature Private Sanctuary Interior & Millwork (10 Photos)",
       images: [
-        'images/service_joinery.jpg'
+        'images/arada/2.jfif',
+        'images/arada/3.jfif',
+        'images/arada/4.jfif',
+        'images/arada/5.jfif',
+        'images/arada/6.jfif',
+        'images/arada/8.jfif',
+        'images/arada/9.jfif',
+        'images/arada/10.jfif',
+        'images/arada/11.jfif',
+        'images/arada/12.jfif'
+      ]
+    },
+    'adnoc-office': {
+      title: "ADNOC Headquarters Fit-Out",
+      category: "OFFICE & COMMERCIAL",
+      subtitle: "Corporate Fit-Out, Architectural Lighting & Glass Partitioning (12 Photos)",
+      images: [
+        'images/adnoc/1.jfif',
+        'images/adnoc/2.jfif',
+        'images/adnoc/3.jfif',
+        'images/adnoc/4.jpg',
+        'images/adnoc/5.jpg',
+        'images/adnoc/6.jpg',
+        'images/adnoc/7.jfif',
+        'images/adnoc/8.jfif',
+        'images/adnoc/9.jfif',
+        'images/adnoc/10.jfif',
+        'images/adnoc/11.jfif',
+        'images/adnoc/12.jfif'
+      ]
+    },
+    'ids-office': {
+      title: "IDS Executive Corporate Office",
+      category: "OFFICE & COMMERCIAL",
+      subtitle: "Executive Workspace & Modern Acoustic Partition Suite (8 Photos)",
+      images: [
+        'images/ids/1.jpeg',
+        'images/ids/2.jpeg',
+        'images/ids/3.jpeg',
+        'images/ids/4.jpeg',
+        'images/ids/5.jpeg',
+        'images/ids/6.jpeg',
+        'images/ids/7.jpeg',
+        'images/ids/8.jpeg'
       ]
     }
   };
@@ -576,12 +660,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Attach click triggers to all cards with data-project
     document.querySelectorAll('[data-project]').forEach(card => {
-      card.addEventListener('click', () => {
+      let startX = 0;
+      let startY = 0;
+      let isMoved = false;
+
+      card.addEventListener('mousedown', (e) => {
+        startX = e.clientX;
+        startY = e.clientY;
+        isMoved = false;
+      });
+
+      card.addEventListener('mousemove', (e) => {
+        if (Math.abs(e.clientX - startX) > 8 || Math.abs(e.clientY - startY) > 8) {
+          isMoved = true;
+        }
+      });
+
+      card.addEventListener('click', (e) => {
+        if (isMoved) return;
         const projectKey = card.getAttribute('data-project');
-        openProjectGallery(projectKey);
+        if (projectKey) {
+          openProjectGallery(projectKey);
+        }
       });
     });
   }
+
+  // 8. Scroll Reveal Observer Animation
+  const revealTargets = document.querySelectorAll(
+    '.service-card, .project-card, .stat-item, .section-heading, .section-heading-light, .section-tag, .section-tag-gold, .hero-content, .value-card, .process-step, .about-intro-content, .contact-form, .modal-photo-card'
+  );
+
+  revealTargets.forEach(el => {
+    el.classList.add('reveal-item');
+    const siblingIndex = Array.from(el.parentNode.children).indexOf(el);
+    el.style.transitionDelay = `${(siblingIndex % 4) * 0.1}s`;
+  });
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealTargets.forEach(el => revealObserver.observe(el));
 });
 
 
