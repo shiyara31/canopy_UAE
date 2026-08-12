@@ -38,6 +38,54 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
   }
 
+  // 3. Desktop Services Context Menu Dropdown
+  const dropdownBtns = document.querySelectorAll('.nav-dropdown-btn');
+
+  dropdownBtns.forEach(btn => {
+    const container = btn.closest('.nav-dropdown-container');
+    if (!container) return;
+    const menu = container.querySelector('.services-context-menu');
+    if (!menu) return;
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+      // Close any other open context menus
+      document.querySelectorAll('.services-context-menu').forEach(m => m.classList.remove('active'));
+      document.querySelectorAll('.nav-dropdown-btn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+
+      if (!isExpanded) {
+        btn.setAttribute('aria-expanded', 'true');
+        menu.classList.add('active');
+      }
+    });
+
+    const menuItems = menu.querySelectorAll('.context-menu-item');
+    menuItems.forEach(item => {
+      item.addEventListener('click', () => {
+        btn.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('active');
+      });
+    });
+  });
+
+  // Close context menu on outside click
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-dropdown-container')) {
+      document.querySelectorAll('.services-context-menu').forEach(m => m.classList.remove('active'));
+      document.querySelectorAll('.nav-dropdown-btn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+    }
+  });
+
+  // Close context menu on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.services-context-menu').forEach(m => m.classList.remove('active'));
+      document.querySelectorAll('.nav-dropdown-btn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+    }
+  });
+
   // 4. Featured Projects Horizontal Side-by-Side Scroll & Drag (Supports multiple carousels)
   const wrappers = document.querySelectorAll('.projects-carousel-wrapper');
 
