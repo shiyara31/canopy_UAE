@@ -11,6 +11,9 @@
   --accent-gold-hover: #b58b63;
   --accent-quote-bg: #d3a373;
   
+  --brand-green: #0E4D34;
+  --brand-green-accent: #197a54;
+  
   --text-dark-primary: #1a1a1a;
   --text-dark-secondary: #5c5c5c;
   --text-light-primary: #ffffff;
@@ -202,12 +205,38 @@ img {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   font-family: var(--font-serif);
   font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: 4px;
-  color: var(--text-light-primary);
+  color: var(--brand-green);
   text-transform: uppercase;
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--brand-green);
+  transition: color var(--transition-normal);
+}
+
+.logo:hover span {
+  color: var(--brand-green-accent);
+}
+
+.logo-icon {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(14, 77, 52, 0.4));
+  transition: transform var(--transition-normal), filter var(--transition-normal);
+}
+
+.logo:hover .logo-icon {
+  transform: scale(1.08);
+  filter: drop-shadow(0 4px 12px rgba(14, 77, 52, 0.7));
 }
 
 .desktop-nav {
@@ -242,7 +271,7 @@ img {
 }
 
 /* ----------------------------------------------------
-   DESKTOP SERVICES DROPDOWN CONTEXT MENU
+   DESKTOP SERVICES DROPDOWN CONTEXT MENU (WHITE THEME)
 ---------------------------------------------------- */
 .nav-dropdown-container {
   position: relative;
@@ -294,19 +323,17 @@ img {
   color: var(--accent-gold);
 }
 
-/* Floating Context Menu Card (Replicating Modern Desktop Context Menu) */
+/* Floating Context Menu Card (White Modern Style) */
 .services-context-menu {
   position: absolute;
   top: calc(100% + 14px);
   left: 50%;
   transform: translateX(-50%) translateY(8px) scale(0.96);
   width: 295px;
-  background: rgba(18, 20, 24, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 14px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.06);
   padding: 6px;
   z-index: 1050;
   visibility: hidden;
@@ -330,9 +357,9 @@ img {
   transform: translateX(-50%) rotate(45deg);
   width: 10px;
   height: 10px;
-  background: rgba(18, 20, 24, 0.95);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  background: #ffffff;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
   z-index: 1;
 }
 
@@ -344,7 +371,7 @@ img {
 
 .context-menu-divider {
   height: 1px;
-  background: rgba(255, 255, 255, 0.08);
+  background: #e9ecef;
   margin: 5px 4px;
 }
 
@@ -355,17 +382,17 @@ img {
   padding: 8px 12px;
   border-radius: 8px;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.85);
+  color: #1a1a1a;
   font-size: 0.82rem;
-  font-weight: 450;
+  font-weight: 500;
   letter-spacing: 0.2px;
   transition: all 0.15s ease;
   user-select: none;
 }
 
 .context-menu-item:hover {
-  background: rgba(255, 255, 255, 0.09);
-  color: #ffffff;
+  background: #f3f4f6;
+  color: #000000;
   transform: translateX(2px);
 }
 
@@ -382,7 +409,7 @@ img {
 
 .context-menu-item:hover .item-icon {
   transform: scale(1.1);
-  color: var(--accent-gold);
+  color: #b58b63;
 }
 
 .context-menu-item .item-text {
@@ -394,19 +421,19 @@ img {
 
 .context-menu-item.item-action {
   color: var(--accent-gold);
-  font-weight: 500;
+  font-weight: 600;
   justify-content: space-between;
 }
 
 .context-menu-item.item-action:hover {
-  background: rgba(197, 160, 89, 0.14);
-  color: #fff;
+  background: rgba(197, 160, 89, 0.12);
+  color: #8c6436;
 }
 
 .context-menu-item .item-arrow {
   display: inline-flex;
   align-items: center;
-  color: rgba(255, 255, 255, 0.5);
+  color: #888888;
   transition: transform 0.15s ease, color 0.15s ease;
 }
 
@@ -998,9 +1025,33 @@ img {
   font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: 4px;
-  color: var(--text-light-primary);
-  display: block;
+  color: var(--brand-green);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 12px;
+  text-decoration: none;
+}
+
+.footer-logo span {
+  color: var(--brand-green);
+  transition: color var(--transition-normal);
+}
+
+.footer-logo:hover span {
+  color: var(--brand-green-accent);
+}
+
+.footer-logo-icon {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(14, 77, 52, 0.4));
+  transition: transform var(--transition-normal);
+}
+
+.footer-logo:hover .footer-logo-icon {
+  transform: scale(1.08);
 }
 
 .footer-tagline {
