@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.canopyinteriors.ae/</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.canopyinteriors.ae/images/hero.jpg</image:loc>
+      <image:title>Canopy Interiors - Luxury Interior Design Studio Dubai</image:title>
+      <image:caption>Premium interior design and fit-out company in Dubai, UAE</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.canopyinteriors.ae/images/about.jpg</image:loc>
+      <image:title>Canopy Interiors Design Studio</image:title>
+      <image:caption>Luxury interior design studio crafting bespoke spaces</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Services Page -->
+  <url>
+    <loc>https://www.canopyinteriors.ae/services.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.canopyinteriors.ae/images/service_villa.jpg</image:loc>
+      <image:title>Full Villa Fit-Out Service Dubai</image:title>
+      <image:caption>Luxury villa interior design and fit-out in Dubai UAE</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.canopyinteriors.ae/images/service_office.jpg</image:loc>
+      <image:title>Office Renovation Service Dubai</image:title>
+      <image:caption>Corporate office renovation and fit-out in Dubai</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.canopyinteriors.ae/images/service_retail.jpg</image:loc>
+      <image:title>Commercial Fit-Out Service Dubai</image:title>
+      <image:caption>Shop salon café fit-out and commercial interior design</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.canopyinteriors.ae/images/service_gypsum.jpg</image:loc>
+      <image:title>Gypsum Partition Ceiling Dubai</image:title>
+      <image:caption>Custom gypsum partitions and ceiling installations</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.canopyinteriors.ae/images/service_joinery.jpg</image:loc>
+      <image:title>Joinery Wardrobe Kitchen Dubai</image:title>
+      <image:caption>Bespoke joinery wardrobes and kitchen installations</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.canopyinteriors.ae/images/service_painting.jpg</image:loc>
+      <image:title>Painting Wall Finishes Dubai</image:title>
+      <image:caption>Premium painting and wall finish services</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.canopyinteriors.ae/images/service_flooring.jpg</image:loc>
+      <image:title>Flooring Tiling Service Dubai</image:title>
+      <image:caption>Expert flooring and tiling installation services</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Projects Portfolio Page -->
+  <url>
+    <loc>https://www.canopyinteriors.ae/projects.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.canopyinteriors.ae/images/nishad/LIVING.png</image:loc>
+      <image:title>The Nishad Residence - Luxury Villa Interior</image:title>
+      <image:caption>Luxury villa living room interior design by Canopy Interiors</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.canopyinteriors.ae/images/sameer/m1.jpg</image:loc>
+      <image:title>The Sameer Residence - Luxury Villa Interior</image:title>
+      <image:caption>Bespoke villa interior design and fit-out</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.canopyinteriors.ae/images/office_glass_fitout1.jpg</image:loc>
+      <image:title>Executive Office Glass Fit-Out</image:title>
+      <image:caption>Corporate executive office fit-out with glass partitioning</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About Us Page -->
+  <url>
+    <loc>https://www.canopyinteriors.ae/about.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.canopyinteriors.ae/images/about.jpg</image:loc>
+      <image:title>About Canopy Interiors Dubai</image:title>
+      <image:caption>Learn about Canopy Interiors luxury design studio</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Contact Us Page -->
+  <url>
+    <loc>https://www.canopyinteriors.ae/contact.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

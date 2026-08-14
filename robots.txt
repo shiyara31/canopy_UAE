@@ -1,0 +1,26 @@
+# Canopy Interiors - robots.txt
+# https://www.canopyinteriors.ae
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow temporary/scratch directories
+Disallow: /scratch/
+Disallow: /.git/
+
+# Sitemap location
+Sitemap: https://www.canopyinteriors.ae/sitemap.xml
+
+# Google-specific directives
+User-agent: Googlebot
+Allow: /
+Allow: /images/
+
+# Google Image Bot
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Bing
+User-agent: Bingbot
+Allow: /
