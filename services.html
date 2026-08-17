@@ -444,17 +444,21 @@
           </div>
 
           <!-- Service 8 -->
-          <div class="service-card" id="villa">
+          <div class="service-card" id="villa" data-project="villa-fitout" style="cursor: pointer;">
             <div class="service-img-wrapper">
-              <img src="images/service_villa.jpg" alt="Full villa fit-out">
+              <img src="images/villa fitout/1/WhatsApp Image 2026-08-09 at 12.15.23 PM.jpeg" alt="Full villa fit-out in Dubai UAE">
               <div class="service-icon-badge">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 14h6v7H9z"/></svg>
               </div>
             </div>
             <div class="service-card-body">
+              <span class="proj-badge" style="margin-bottom: 4px; color: var(--accent-gold); font-size: 0.65rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;">Villa Fit-Out • 75 Photos</span>
               <h3>Full villa fit-out</h3>
               <p>Turnkey luxury villa fit-outs from structural alterations and MEP integrations to grand foyer detailing, landscaping, and luxury handover.</p>
-              <a href="contact.html" class="btn-outline-dark" style="align-self: flex-start; margin-top: 10px;">Inquire Service</a>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 10px;">
+                <span class="btn-outline-dark" style="font-size: 0.75rem; padding: 6px 12px;">View Album (75 Photos)</span>
+                <a href="contact.html" class="btn-outline-dark" style="font-size: 0.75rem; padding: 6px 12px;" onclick="event.stopPropagation();">Inquire</a>
+              </div>
             </div>
           </div>
 
@@ -645,6 +649,37 @@
       </div>
     </div>
   </footer>
+
+  <!-- Full Screen Grid Project Gallery Modal -->
+  <div class="project-modal" id="projectModal">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-content-wrapper" style="max-width: 1100px;">
+      <button class="modal-close-btn" id="modalClose" aria-label="Close modal">&times;</button>
+      <div class="modal-header-info">
+        <span class="modal-category" id="modalCategory">FIT-OUT SERVICES</span>
+        <h2 class="modal-title" id="modalTitle">Full Villa Fit-Out</h2>
+        <p class="modal-subtitle" id="modalSubtitle">Click any photo to enlarge</p>
+      </div>
+
+      <!-- Scrollable Grid Container for All Photos -->
+      <div class="modal-grid-gallery" id="modalGridGallery"></div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Photo Zoom Lightbox -->
+  <div class="photo-zoom-overlay" id="photoZoomOverlay">
+    <button class="photo-zoom-close" id="zoomClose" aria-label="Close Fullscreen">&times;</button>
+    <button class="photo-zoom-nav zoom-prev" id="zoomPrev" aria-label="Previous Photo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <div class="photo-zoom-container">
+      <img src="" id="zoomImage" alt="Enlarged View">
+      <div class="photo-zoom-counter" id="zoomCounter">1 / 1</div>
+    </div>
+    <button class="photo-zoom-nav zoom-next" id="zoomNext" aria-label="Next Photo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+  </div>
 
   <script src="script.js" defer></script>
 </body>

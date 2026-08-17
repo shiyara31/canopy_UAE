@@ -825,8 +825,39 @@ img {
 
 .projects-header .section-desc-light {
   max-width: 680px;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
   color: var(--text-light-secondary);
+}
+
+.featured-projects-section .projects-filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.featured-projects-section .filter-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e0e0e0;
+  padding: 9px 20px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.featured-projects-section .filter-btn:hover,
+.featured-projects-section .filter-btn.active {
+  background: var(--accent-gold);
+  color: #000000;
+  border-color: var(--accent-gold);
+  box-shadow: 0 4px 16px rgba(201, 158, 117, 0.35);
+  transform: translateY(-2px);
 }
 
 .projects-grid {
@@ -1250,6 +1281,17 @@ img {
   .card-arrow-link svg {
     width: 14px !important;
     height: 14px !important;
+  }
+
+  .featured-projects-section .projects-filter-tabs {
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+
+  .featured-projects-section .filter-btn {
+    padding: 6px 12px;
+    font-size: 0.65rem;
+    letter-spacing: 0.8px;
   }
 
   /* 3 in one line mobile view for Projects */

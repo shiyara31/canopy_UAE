@@ -493,9 +493,9 @@
         <!-- All 8 Fit-Out Services Cards -->
         <div class="what-we-do-cards">
           <!-- Card 1: Villa Fit-Out -->
-          <div class="service-card">
+          <div class="service-card" data-project="villa-fitout" style="cursor: pointer;">
             <div class="service-img-wrapper">
-              <img src="images/service_villa.jpg" alt="Full luxury villa fit-out and interior design service in Dubai UAE" loading="lazy">
+              <img src="images/villa fitout/1/WhatsApp Image 2026-08-09 at 12.15.23 PM.jpeg" alt="Full luxury villa fit-out and interior design service in Dubai UAE" loading="lazy">
               <div class="service-icon-badge">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                   <path d="M3 21h18M5 21V10l7-5 7 5v11M9 14h6v7H9z" />
@@ -503,13 +503,15 @@
               </div>
             </div>
             <div class="service-card-body">
+              <span class="proj-badge">Villa Fit-Out • 75 Photos</span>
               <h3>Full Villa Fit-Out</h3>
               <p>Turnkey luxury villa transformations, structural alterations, and high-end detailing.</p>
-              <a href="contact.html" class="card-arrow-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <p class="proj-action" style="color: var(--accent-gold); font-weight: 600; margin-top: auto; display: flex; align-items: center; gap: 4px;">
+                <span>Click to view album</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
-              </a>
+              </p>
             </div>
           </div>
 
@@ -685,10 +687,19 @@
           </p>
         </div>
 
+        <!-- Project Category Filters -->
+        <div class="projects-filter-tabs" id="homeProjectFilters">
+          <button class="filter-btn active" data-project-filter="all">ALL PROJECTS</button>
+          <button class="filter-btn" data-project-filter="villa">VILLA</button>
+          <button class="filter-btn" data-project-filter="office">OFFICE</button>
+          <button class="filter-btn" data-project-filter="cafe">CAFÉ & COMMERCIAL</button>
+          <button class="filter-btn" data-project-filter="exterior">EXTERIOR</button>
+        </div>
+
         <!-- All 12 Projects Grid -->
         <div class="projects-grid">
           <!-- Project 1: The Nishad Residence -->
-          <div class="project-card" data-project="nishad-residence" style="cursor: pointer;">
+          <div class="project-card" data-category="villa" data-project="nishad-residence" style="cursor: pointer;">
             <div class="project-img-box">
               <img src="images/nishad/LIVING.png" alt="The Nishad Residence" loading="lazy">
               <div class="project-card-overlay">
@@ -703,7 +714,7 @@
           </div>
 
           <!-- Project 2: The Sameer Residence -->
-          <div class="project-card" data-project="sameer-residence" style="cursor: pointer;">
+          <div class="project-card" data-category="villa" data-project="sameer-residence" style="cursor: pointer;">
             <div class="project-img-box">
               <img src="images/sameer/m1.jpg" alt="The Sameer Residence" loading="lazy">
               <div class="project-card-overlay">
@@ -718,7 +729,7 @@
           </div>
 
           <!-- Project 3: The Khader Residence -->
-          <div class="project-card" data-project="khader-residence" style="cursor: pointer;">
+          <div class="project-card" data-category="villa" data-project="khader-residence" style="cursor: pointer;">
             <div class="project-img-box">
               <img src="images/khader/2.jpg" alt="The Khader Residence" loading="lazy">
               <div class="project-card-overlay">
@@ -733,7 +744,7 @@
           </div>
 
           <!-- Project 4: The Nazar Residence -->
-          <div class="project-card" data-project="nazar-residence" style="cursor: pointer;">
+          <div class="project-card" data-category="villa" data-project="nazar-residence" style="cursor: pointer;">
             <div class="project-img-box">
               <img src="images/nazar/living.webp" alt="The Nazar Residence" loading="lazy">
               <div class="project-card-overlay">
@@ -748,7 +759,7 @@
           </div>
 
           <!-- Project 5: Luxury Villa Exterior Work -->
-          <div class="project-card" data-project="exterior-architecture" style="cursor: pointer;">
+          <div class="project-card" data-category="exterior" data-project="exterior-architecture" style="cursor: pointer;">
             <div class="project-img-box">
               <img src="images/exterior/5.jpg" alt="Luxury Villa Exterior Work" loading="lazy">
               <div class="project-card-overlay">
@@ -763,7 +774,7 @@
           </div>
 
           <!-- Project 6: Executive Office Fit-Out -->
-          <div class="project-card" data-project="executive-office" style="cursor: pointer;">
+          <div class="project-card" data-category="office" data-project="executive-office" style="cursor: pointer;">
             <div class="project-img-box">
               <img src="images/office_glass_fitout1.jpg" alt="Executive Office Fit-Out" loading="lazy">
               <div class="project-card-overlay">
@@ -778,7 +789,7 @@
           </div>
 
           <!-- Project 7: The Shabana Residence (Ajman) -->
-          <div class="project-card" data-project="shabana-residence" style="cursor: pointer;">
+          <div class="project-card" data-category="villa" data-project="shabana-residence" style="cursor: pointer;">
             <div class="project-img-box">
               <img src="images/shabana/1.jpeg" alt="The Shabana Residence (Ajman)" loading="lazy">
               <div class="project-card-overlay">
@@ -793,7 +804,7 @@
           </div>
 
           <!-- Project 8: Arada Masaar Luxury Villa -->
-          <div class="project-card" data-project="arada-masaar" style="cursor: pointer;">
+          <div class="project-card" data-category="villa" data-project="arada-masaar" style="cursor: pointer;">
             <div class="project-img-box">
               <img src="images/arada/2.jfif" alt="Arada Masaar Luxury Villa" loading="lazy">
               <div class="project-card-overlay">
@@ -808,7 +819,7 @@
           </div>
 
           <!-- Project 9: ADNOC Headquarters Fit-Out -->
-          <div class="project-card" data-project="adnoc-office" style="cursor: pointer;">
+          <div class="project-card" data-category="office" data-project="adnoc-office" style="cursor: pointer;">
             <div class="project-img-box">
               <img src="images/adnoc/1.jfif" alt="ADNOC Headquarters Fit-Out" loading="lazy">
               <div class="project-card-overlay">
@@ -823,7 +834,7 @@
           </div>
 
           <!-- Project 10: IDS Executive Corporate Office -->
-          <div class="project-card" data-project="ids-office" style="cursor: pointer;">
+          <div class="project-card" data-category="office" data-project="ids-office" style="cursor: pointer;">
             <div class="project-img-box">
               <img src="images/ids/1.jpeg" alt="IDS Executive Corporate Office" loading="lazy">
               <div class="project-card-overlay">
@@ -838,7 +849,7 @@
           </div>
 
           <!-- Project 11: Group Office Deira, Dubai -->
-          <div class="project-card" data-project="group-office-deira" style="cursor: pointer;">
+          <div class="project-card" data-category="office" data-project="group-office-deira" style="cursor: pointer;">
             <div class="project-img-box">
               <img src="images/GOLDEN/1.jpeg" alt="Group Office Deira, Dubai" loading="lazy">
               <div class="project-card-overlay">
@@ -853,11 +864,11 @@
           </div>
 
           <!-- Project 12: Ongoing Fit-Out & Site Progress -->
-          <div class="project-card" data-project="ongoing-projects" style="cursor: pointer;">
+          <div class="project-card" data-category="cafe" data-project="ongoing-projects" style="cursor: pointer;">
             <div class="project-img-box">
               <img src="images/ongoing/3.jpg" alt="Ongoing Fit-Out & Site Progress" loading="lazy">
               <div class="project-card-overlay">
-                <span class="proj-badge">On-Site Execution • 16 Photos</span>
+                <span class="proj-badge">Café & Commercial • 16 Photos</span>
                 <h3>Ongoing Site Progress</h3>
                 <p class="proj-action">
                   <span>Click to view photos</span>

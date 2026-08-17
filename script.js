@@ -271,6 +271,30 @@ document.addEventListener('DOMContentLoaded', () => {
     updateProjectVisibility();
   }
 
+  // 6b. Home Page Featured Projects Filter Tabs
+  const homeProjectFilters = document.getElementById('homeProjectFilters');
+  const homeProjectCards = document.querySelectorAll('.projects-grid .project-card');
+
+  if (homeProjectFilters && homeProjectCards.length > 0) {
+    const filterBtns = homeProjectFilters.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const selectedFilter = btn.getAttribute('data-project-filter');
+        homeProjectCards.forEach(card => {
+          const cardCat = card.getAttribute('data-category') || '';
+          if (selectedFilter === 'all' || cardCat.includes(selectedFilter)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
   // 7. Project Modal Lightbox Gallery
   const projectModal = document.getElementById('projectModal');
   const modalBackdrop = document.getElementById('modalBackdrop');
@@ -682,6 +706,88 @@ document.addEventListener('DOMContentLoaded', () => {
         'images/ongoing/14.jpg',
         'images/ongoing/15.jpg',
         'images/ongoing/16.jpg'
+      ]
+    },
+    'villa-fitout': {
+      title: "Full Villa Fit-Out",
+      category: "FIT-OUT SERVICES",
+      subtitle: "Turnkey Luxury Villa Transformations & Detailing (75 Photos)",
+      images: [
+        'images/villa fitout/1/WhatsApp Image 2026-08-09 at 12.15.23 PM.jpeg',
+        'images/villa fitout/1/WhatsApp Image 2026-08-09 at 12.15.24 PM.jpeg',
+        'images/villa fitout/1/WhatsApp Image 2026-08-09 at 12.15.24 PM (1).jpeg',
+        'images/villa fitout/1/WhatsApp Image 2026-08-09 at 12.15.24 PM (2).jpeg',
+        'images/villa fitout/1/WhatsApp Image 2026-08-09 at 12.15.24 PM (3).jpeg',
+        'images/villa fitout/1/WhatsApp Image 2026-08-09 at 12.15.24 PM (4).jpeg',
+        'images/villa fitout/1/WhatsApp Image 2026-08-09 at 12.15.24 PM (5).jpeg',
+        'images/villa fitout/1/WhatsApp Image 2026-08-09 at 12.15.24 PM (6).jpeg',
+        'images/villa fitout/1/WhatsApp Image 2026-08-09 at 12.15.24 PM (7).jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.22.59 PM.jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.22.59 PM (1).jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.22.59 PM (2).jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.00 PM.jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.00 PM (1).jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.00 PM (2).jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.00 PM (3).jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.02 PM.jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.02 PM (1).jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.02 PM (2).jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.03 PM.jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.03 PM (1).jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.03 PM (2).jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.04 PM.jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.04 PM (1).jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.04 PM (2).jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.04 PM (3).jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.05 PM.jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.05 PM (1).jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.05 PM (2).jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.05 PM (3).jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.06 PM.jpeg',
+        'images/villa fitout/2/WhatsApp Image 2026-08-09 at 12.23.06 PM (1).jpeg',
+        'images/villa fitout/3/1.jfif',
+        'images/villa fitout/3/2.jfif',
+        'images/villa fitout/3/3.jfif',
+        'images/villa fitout/3/4.jfif',
+        'images/villa fitout/3/5.jfif',
+        'images/villa fitout/3/6.jfif',
+        'images/villa fitout/3/8.jfif',
+        'images/villa fitout/3/9.jfif',
+        'images/villa fitout/3/10.jfif',
+        'images/villa fitout/3/11.jfif',
+        'images/villa fitout/3/12.jfif',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-07.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-08.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-09.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-10.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-11.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-12.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-13.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-14.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-15.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-16.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-17.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-18.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-19.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-20.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-21.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-22.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-23.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-24.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-25.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-26.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-27.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-28.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-29.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-30.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-31.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-32.jpg',
+        'images/villa fitout/4/3d  VIEW FOR MR.Ashraf Aboobacker Al Maskan @ Tilal city,sharjah Uae 11052026 (1)-33.jpg',
+        'images/villa fitout/5/WhatsApp Image 2026-08-06 at 9.43.42 AM.jpeg',
+        'images/villa fitout/5/WhatsApp Image 2026-08-06 at 9.43.42 AM (1).jpeg',
+        'images/villa fitout/5/WhatsApp Image 2026-08-06 at 9.43.42 AM (2).jpeg',
+        'images/villa fitout/5/WhatsApp Image 2026-08-06 at 9.43.42 AM (3).jpeg',
+        'images/villa fitout/5/WhatsApp Image 2026-08-06 at 9.43.42 AM (4).jpeg'
       ]
     }
   };
