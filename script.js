@@ -647,6 +647,42 @@ document.addEventListener('DOMContentLoaded', () => {
         'images/ids/7.jpeg',
         'images/ids/8.jpeg'
       ]
+    },
+    'group-office-deira': {
+      title: "Group Office Deira, Dubai",
+      category: "OFFICE & COMMERCIAL",
+      subtitle: "Corporate Office Fit-Out & Architectural Glass Work (6 Photos)",
+      images: [
+        'images/GOLDEN/1.jpeg',
+        'images/GOLDEN/2.jpeg',
+        'images/GOLDEN/3.jpeg',
+        'images/GOLDEN/4.jpeg',
+        'images/GOLDEN/5.jpeg',
+        'images/GOLDEN/6.jpeg'
+      ]
+    },
+    'ongoing-projects': {
+      title: "Ongoing Fit-Out & Site Progress",
+      category: "ON-SITE EXECUTION",
+      subtitle: "Active Site Work, Joinery Installation & Precision Fit-Out (16 Photos)",
+      images: [
+        'images/ongoing/1.jpg',
+        'images/ongoing/2.jpg',
+        'images/ongoing/3.jpg',
+        'images/ongoing/4.jpg',
+        'images/ongoing/5.jpg',
+        'images/ongoing/6.jpg',
+        'images/ongoing/7.jpg',
+        'images/ongoing/8.jpg',
+        'images/ongoing/9.jpg',
+        'images/ongoing/10.jpg',
+        'images/ongoing/11.jpg',
+        'images/ongoing/12.jpg',
+        'images/ongoing/13.jpg',
+        'images/ongoing/14.jpg',
+        'images/ongoing/15.jpg',
+        'images/ongoing/16.jpg'
+      ]
     }
   };
 
