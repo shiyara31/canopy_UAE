@@ -775,7 +775,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'office-fitout': {
       title: "Office Renovation & Commercial Fit-Out",
       category: "FIT-OUT SERVICES",
-      subtitle: "Corporate Workplaces, Acoustic Partitioning, Executive Styling & Moodboards (41 Photos)",
+      subtitle: "Corporate Workplaces, Acoustic Partitioning, Executive Styling & Moodboards (40 Photos)",
       images: [
         'images/office/1.jpg',
         'images/office/2.jpg',
@@ -787,7 +787,6 @@ document.addEventListener('DOMContentLoaded', () => {
         'images/office/8.jpg',
         'images/office/9 (1).jpg',
         'images/office/10.jpg',
-        'images/office/11.jpg',
         'images/office/BAE SHOP-03.jpg',
         'images/office/BAE SHOP-04.jpg',
         'images/office/BAE SHOP-05.jpg',
