@@ -11,8 +11,10 @@
   --accent-gold-hover: #b58b63;
   --accent-quote-bg: #d3a373;
   
-  --brand-green: #127349;
-  --brand-green-accent: #19945f;
+  --brand-blue: #1b6cd8;
+  --brand-blue-accent: #257df0;
+  --brand-green: #1b6cd8;
+  --brand-green-accent: #257df0;
   
   --text-dark-primary: #1a1a1a;
   --text-dark-secondary: #5c5c5c;
@@ -236,18 +238,18 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: 4px;
-  color: var(--brand-green);
+  color: #ffffff;
   text-transform: uppercase;
   text-decoration: none;
 }
 
 .logo span {
-  color: var(--brand-green);
+  color: #ffffff;
   transition: color var(--transition-normal);
 }
 
 .logo:hover span {
-  color: var(--brand-green-accent);
+  color: var(--accent-gold);
 }
 
 .logo-icon {
@@ -1043,7 +1045,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: 4px;
-  color: var(--brand-green);
+  color: #ffffff;
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -1052,12 +1054,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-logo span {
-  color: var(--brand-green);
+  color: #ffffff;
   transition: color var(--transition-normal);
 }
 
 .footer-logo:hover span {
-  color: var(--brand-green-accent);
+  color: var(--accent-gold);
 }
 
 .footer-logo-icon {
